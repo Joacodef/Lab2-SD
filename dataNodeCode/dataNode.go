@@ -90,7 +90,7 @@ func main() {
 		panic("La conexion no se pudo crear" + err.Error())
 	}
 	serv = grpc.NewServer()
-	log.Println("Servidor escuchando en puerto " + PORT)
+	log.Println("===Servidor escuchando en puerto " + PORT + "===")
 	pb.RegisterMessageServiceServer(serv, &server{})
 	if err = serv.Serve(listener); err != nil {
 		panic("El server no se pudo iniciar" + err.Error())

@@ -26,7 +26,7 @@ func main() {
 
 	for {
 		// Interfaz para el usuario:
-		fmt.Println("Ingrese Categoria: MILITAR,LOGÍSTICA,FINANCIERA \nPara apagar todo escriba 'exit' ")
+		fmt.Println("===Ingrese Categoria: MILITAR,LOGÍSTICA,FINANCIERA=== \nPara apagar todo escriba 'exit' ")
 		reader := bufio.NewReader(os.Stdin)
 		line, err := reader.ReadString('\n')
 		if err != nil {
@@ -40,6 +40,7 @@ func main() {
 			serviceCliente.Apagar(context.Background(), &pb.Message{
 				Body: "",
 			})
+			log.Println("Apagado exitoso. ¡Nos vemos!")
 			break
 		} else {
 			// Búsqueda de registros por tipo:
@@ -49,7 +50,7 @@ func main() {
 			if strings.TrimSpace(respuesta.Body) == "" {
 				log.Println("<REGISTROS NO ENCONTRADOS>")
 			} else {
-				log.Println("Registros recibidos:\n" + respuesta.Body)
+				log.Println("Registros recibidos (ID : DATA):\n" + respuesta.Body)
 			}
 		}
 

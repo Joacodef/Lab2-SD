@@ -26,7 +26,7 @@ func main() {
 
 	for {
 		// Interfaz para el usuario:
-		fmt.Println("Ingrese información: (<TIPO> : <ID> : <DATA>) \nPara salir ecribir 'exit' ")
+		fmt.Println("===Ingrese información: (<TIPO> : <ID> : <DATA>)=== \nPara salir ecribir 'exit' ")
 		reader := bufio.NewReader(os.Stdin)
 		line, err := reader.ReadString('\n') // Line = informacion
 		if err != nil {
