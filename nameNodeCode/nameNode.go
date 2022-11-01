@@ -78,7 +78,7 @@ func (s *server) CombineMessage(ctx context.Context, msg *pb.Message) (*pb.Messa
 	} else {
 		respuesta = "El ID de su mensaje ya existe"
 	}
-	log.Println("===Servidor escuchando en puerto 50050===")
+	log.Println("===Servidor escuchando en puerto :50050===")
 	return &pb.Message{Body: respuesta}, nil
 }
 
@@ -175,11 +175,11 @@ func (s *server) RebelsMessage(ctx context.Context, msg *pb.Message) (*pb.Messag
 		}else{
 			log.Println("Se han enviado registros a Rebels")
 		}
-		log.Println("===Servidor escuchando en puerto 50050===")
+		log.Println("===Servidor escuchando en puerto :50050===")
 		return &pb.Message{Body: strRespuesta}, nil
 	} else {
 		log.Println("Formato de input incorrecto, aviso enviado a Rebels")
-		log.Println("===Servidor escuchando en puerto 50050===")
+		log.Println("===Servidor escuchando en puerto :50050===")
 		return &pb.Message{Body: "Formato de input incorrecto, inténtelo de nuevo."}, nil
 	}
 }
@@ -304,7 +304,7 @@ func main() {
 		panic("La conexion no se pudo crear" + err.Error())
 	}
 	serv = grpc.NewServer()
-	log.Println("===Servidor escuchando en puerto 50050===")
+	log.Println("===Servidor escuchando en puerto :50050===")
 	pb.RegisterMessageServiceServer(serv, &server{})
 	if err = serv.Serve(listener); err != nil {
 		panic("El server no se pudo iniciar" + err.Error())

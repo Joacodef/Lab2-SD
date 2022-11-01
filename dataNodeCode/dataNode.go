@@ -36,7 +36,7 @@ func (s *server) Apagar(ctx context.Context, msg *pb.Message) (*pb.Message, erro
 func (s *server) CreateRecord(ctx context.Context, msg *pb.Message) (*pb.Message, error) {
 	log.Println("Solicitud de NameNode recibida, mensaje registrado: ", msg.Body)
 	writeFile(msg.Body)
-	log.Println("Enviando respuesta...\nServidor escuchando en puerto " + PORT)
+	log.Println("Enviando respuesta...\n===Servidor escuchando en puerto " + PORT+"===")
 	return &pb.Message{Body: "Registro creado correctamente"}, nil
 }
 

@@ -8,7 +8,7 @@ datanode3:
 	bash -c "trap 'go run dataNodeCode/dataNode.go 50053' EXIT";
 combine:
 	bash -c "trap 'go run combineCode/combine.go' EXIT";
-rebels:
+rebeldes:
 	bash -c "trap 'go run rebelsCode/rebels.go' EXIT";
 clean:
 	rm -f dataNodeCode/DATA.txt
