@@ -66,7 +66,7 @@ func (s *server) SearchRecord(ctx context.Context, msg *pb.Message) (*pb.Message
 	}
 
 	log.Println("Se han enviado " + strconv.Itoa(i) + " registros como respuesta")
-	log.Println("Servidor escuchando en puerto " + PORT)
+	log.Println("===Servidor escuchando en puerto " + PORT + "===")
 	return &pb.Message{Body: respuesta}, nil
 }
 

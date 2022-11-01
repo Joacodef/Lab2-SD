@@ -39,7 +39,7 @@ func main() {
 		respuesta, _ := serviceCliente.CombineMessage(context.Background(), &pb.Message{
 			Body: line,
 		})
-		log.Println(respuesta.Body)
+		log.Println("Respuesta recibida: "+respuesta.Body)
 
 	}
 
