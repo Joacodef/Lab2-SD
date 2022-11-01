@@ -1,2 +1,0 @@
-MILITAR : 1 : reg 2
-LOGÍSTICA : 3 : msj 1
