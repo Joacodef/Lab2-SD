@@ -83,7 +83,7 @@ var serv *grpc.Server
 func main() {
 	file, _ := os.Create("DATA.txt")
 	file.Close()
-	PORT = os.Args[0]
+	PORT = ":"+strings.TrimSpace(os.Args[1])
 
 	listener, err := net.Listen("tcp", PORT) //conexion sincrona
 	if err != nil {
