@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "SD/LAB2/proto";
+
+message Message {
+    string body = 1;
+}
+
+
+service MessageService {
+    rpc CombineMessage (Message) returns (Message);
+    rpc RebelsMessage (Message) returns (Message);
+    rpc CreateRecord (Message) returns (Message);
+    rpc SearchRecord (Message) returns (Message);
+    rpc Apagar (Message) returns (Message);
+    rpc Terminar (Message) returns (Message);
+}
