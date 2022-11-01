@@ -193,8 +193,10 @@ func (s *server) RebelsMessage(ctx context.Context, msg *pb.Message) (*pb.Messag
 
 func ComunicacionDataNodes(msg string, dataNodeID int, funToCall string) (resp string) {
 	// NameNode actua como Cliente para comunicarse con DataNodes
+	// Los puertos son 50051 para el datanode 1, 50052 para el datanode 2 y lo mismo para el 3
 	port := ":5005" + strconv.Itoa(dataNodeID)
-	connS, err := grpc.Dial("localhost"+port, grpc.WithInsecure())
+	// Las maquinas son dist130 para datanode 1, dist131 para el 2 y dist132 para el 3
+	connS, err := grpc.Dial("dist13"+strconv.Itoa(dataNodeID-1)+".inf.santiago.usm.cl"+port, grpc.WithInsecure())
 	if err != nil {
 		panic("No se pudo conectar con el servidor, puerto" + port + err.Error())
 	}

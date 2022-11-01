@@ -17,7 +17,7 @@ var serviceCliente pb.MessageServiceClient
 func main() {
 	// Conexión con el nameNode (el combine es cliente):
 	port := ":50050"
-	connS, err := grpc.Dial("localhost"+port, grpc.WithInsecure())
+	connS, err := grpc.Dial("dist129.inf.santiago.usm.cl"+port, grpc.WithInsecure())
 	if err != nil {
 		panic("No se pudo conectar con el servidor" + err.Error())
 	}

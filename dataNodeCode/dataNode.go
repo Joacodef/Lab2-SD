@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-const PORT = ":50051" //Seleccionar puerto 50051, 50052 o 50053
+var PORT = "" //Seleccionar puerto 50051, 50052 o 50053
 
 type server struct {
 	pb.UnimplementedMessageServiceServer
@@ -83,6 +83,7 @@ var serv *grpc.Server
 func main() {
 	file, _ := os.Create("DATA.txt")
 	file.Close()
+	PORT = os.Args[0]
 
 	listener, err := net.Listen("tcp", PORT) //conexion sincrona
 	if err != nil {
