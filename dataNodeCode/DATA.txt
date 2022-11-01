@@ -1,3 +1,0 @@
-MILITAR : 0 : reg 3
-MILITAR : 1233 : reg 4
-FINANCIERA : 2 : SDFDSDF
